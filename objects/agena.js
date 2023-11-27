@@ -11,14 +11,7 @@ class AgendaAppointment {
         this.subject = data.onderwerp;
         this.subtopic = data.subonderwerp;
         this.location = data.locatie;
-        this.teachers = [];
-
-        // loop through teachers
-        if(data.docenten) {
-            data.docenten.forEach(teacher => {
-                this.teachers.push(new Docent(data));
-            })
-        }
+        this.teachers = data.docenten.map(d => new Docent(d));
     }
 }
 
@@ -26,12 +19,7 @@ class AgendaAppointment {
 class AgendaDay {
     constructor(data) {
         this.date = new Date(data.datum);
-        this.appointments = [];
-
-        // loop through appointments
-        data.rooster.forEach(appointment => {
-            this.appointments.push(new AgendaAppointment(appointment));
-        });
+        this.appointments = data.rooster.map(a => new AgendaAppointment(a));
     }
 }
 
@@ -43,13 +31,7 @@ class AgendaWeek {
         this.week = data.week;
         this.startDate = new Date(data.startdatum);
         this.endDate = new Date(data.einddatum);
-        this.dagen = [];
-
-        // loop through all days
-        data.dagen.forEach(day => {
-            this.dagen.push(new AgendaDay(day));
-        });
-   
+        this.dagen = data.dagen.map(dag => new AgendaDay(dag));
     }
 }
 
