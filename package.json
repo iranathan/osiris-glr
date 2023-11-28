@@ -1,6 +1,6 @@
 {
-  "name": "osiris-glr",
-  "version": "1.0.0",
+  "name": "osiris.js",
+  "version": "1.0.2",
   "description": "An api wrapper for osiris in Grafisch Lyceum Rotterdam.",
   "main": "index.js",
   "scripts": {
