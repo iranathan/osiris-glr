@@ -16,7 +16,7 @@ npm i osiris-glr
 The beaner authentication token can easily be found in the osiris portal.
 Simply copy the token without the "Beaner" part into your code.
 
-![Screenshot of network tab](./assets/화면 캡처 2023-11-28 111556.png)
+![Screenshot of network tab](https://github.com/iranathan/osiris-glr/blob/main/assets/network.png?raw=true)
 
 ## Quick start 
 More examples can be found in the examples folder.
