@@ -1,7 +1,7 @@
-// should be osiris-glr when installing through npm.
-const osiris_glr = require("../index");
+const osiris_glr = require("osiris-glr");
 const client = new osiris_glr("TOKEN");
 
+// simple agenda logger 
 async function main() {
     const weeks = await client.getAgenda();
     weeks.forEach(week => {
