@@ -23,7 +23,8 @@ class RequestSession {
         const res = await this.session.request({
             url: url,
             method: method,
-            data: data
+            data: data,
+            validateStatus: () => true
         });
 
         if(res.status == 401) {

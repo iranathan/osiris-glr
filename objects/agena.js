@@ -31,7 +31,7 @@ class AgendaWeek {
         this.week = data.week;
         this.startDate = new Date(data.startdatum);
         this.endDate = new Date(data.einddatum);
-        this.dagen = data.dagen.map(dag => new AgendaDay(dag));
+        this.days = data.dagen.map(dag => new AgendaDay(dag));
     }
 }
 
