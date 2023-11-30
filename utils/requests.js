@@ -1,4 +1,4 @@
-const axios = require("axios");
+import "axios";
 
 //Errors
 class NotAuthenticated extends Error {
@@ -9,7 +9,7 @@ class NotAuthenticated extends Error {
 }
 
 
-class RequestSession {
+export default class RequestSession {
     constructor(token, baseURL) {
         this.session = axios.create({
             baseURL: baseURL,
@@ -34,5 +34,3 @@ class RequestSession {
         return res
     }
 }
-
-module.exports = RequestSession;

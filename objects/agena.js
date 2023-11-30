@@ -1,7 +1,7 @@
-const Docent = require("./docent.js");
+import Docent from "./docent.js";
 
 // represents a lesson in a day
-class AgendaAppointment {
+export class AgendaAppointment {
     constructor(data) {
         this.id = data.id_rooster;
         this.studentNumber = data.studentnummer;
@@ -16,7 +16,7 @@ class AgendaAppointment {
 }
 
 // represents a day in a week
-class AgendaDay {
+export class AgendaDay {
     constructor(data) {
         this.date = new Date(data.datum);
         this.appointments = data.rooster.map(a => new AgendaAppointment(a));
@@ -24,7 +24,7 @@ class AgendaDay {
 }
 
 // represents a week of the agenda
-class AgendaWeek {
+export default class AgendaWeek {
     constructor(data) {
         console.log(data)
         this.year = data.jaar;
@@ -35,4 +35,3 @@ class AgendaWeek {
     }
 }
 
-module.exports = AgendaWeek;

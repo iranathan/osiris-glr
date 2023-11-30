@@ -1,5 +1,5 @@
 // Represents a Personalia of a user.
-class Personalia {
+export default class Personalia {
     constructor(data) {
         this.name = data.naam;
         this.studentNumber = data.studentnummer;
@@ -10,5 +10,3 @@ class Personalia {
         this.groups = data.groepen;
     }
 }
-
-module.exports = Personalia;

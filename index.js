@@ -1,15 +1,21 @@
 // utils
-const RequestSession = require("./utils/requests.js");
+import RequestSession from "./utils/requests.js";
 
 // objects
-const Personalia = require("./objects/personalia.js");
-const AgendaWeek = require("./objects/agena.js");
-
+import Personalia from "./objects/personalia.js";
+import AgendaWeek from "./objects/agena.js";
 
 // Represents an authenticated osiris client
-class Client {
+export default class Client {
     constructor(token, baseURL="https://glr.osiris-student.nl") {
         this.session = new RequestSession(token, baseURL);
+    }
+
+    changeToken(token) {
+        this.session.session.interceptors.request.use(function (config) {
+            config.headers.Authorization = `Bearer ${token}`;
+            return config;
+        });
     }
 
     async getPersonalia() {
@@ -24,5 +30,3 @@ class Client {
         return request.data.items.map(week => new AgendaWeek(week))
     }
 }
-
-module.exports = Client;
