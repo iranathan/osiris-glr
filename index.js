@@ -12,10 +12,7 @@ export default class Client {
     }
 
     changeToken(token) {
-        this.session.session.interceptors.request.use(function (config) {
-            config.headers.Authorization = `Bearer ${token}`;
-            return config;
-        });
+        this.session.token = token
     }
 
     async getPersonalia() {

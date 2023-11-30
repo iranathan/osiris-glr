@@ -11,11 +11,9 @@ class NotAuthenticated extends Error {
 
 export default class RequestSession {
     constructor(token, baseURL) {
+        this.token = token;
         this.session = axios.create({
-            baseURL: baseURL,
-            headers: {
-                'authorization': `Bearer ${token}`,
-            }
+            baseURL: baseURL
         });
     }
 
@@ -23,6 +21,9 @@ export default class RequestSession {
         const res = await this.session.request({
             url: url,
             method: method,
+            headers: {
+                'authorization': `Bearer ${this.token}`,
+            },
             data: data,
             validateStatus: () => true
         });
