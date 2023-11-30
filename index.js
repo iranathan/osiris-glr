@@ -19,7 +19,7 @@ export default class Client {
     }
 
     async getPersonalia() {
-        const request = await this.session.request("/student/osiris/student/personalia/", "GET");
+        const request = await this.session.request("https://glr.osiris-student.nl/student/osiris/gebruiker", "GET");
         return new Personalia(request.data);
     }
     
