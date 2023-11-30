@@ -1,4 +1,4 @@
-import "axios";
+import axios from "axios";
 
 //Errors
 class NotAuthenticated extends Error {
